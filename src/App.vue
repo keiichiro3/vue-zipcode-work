@@ -1,14 +1,14 @@
 <template>
   <div id="app">
     <h1>ZIPCODE</h1>
-    <!-- <img src="./assets/logo.png"> -->
     <form @submit.prevent="doSubmit">
       <input v-model="zipcode" placeholder="郵便番号">
       <button type="submit">送信</button>
     </form>
-    <ul>
-      <li class="result" v-for="(item, index) in address" :key="index">{{ item }}</li>
-    </ul>
+    <div>
+      <h2 class="serch-result">検索結果</h2>
+      <p class="result" v-for="(item, index) in address" :key="index">{{ item }}</p>
+    </div>
   </div>
 </template>
 
@@ -61,6 +61,11 @@ li {
 }
 
 .result {
-  font-size: 3rem;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.serch-result {
+  margin-bottom: 5px;
 }
 </style>
